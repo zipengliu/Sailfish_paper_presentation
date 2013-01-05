@@ -177,7 +177,7 @@ a:focus {
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 
-    font-family: 'Droid Sans', Arial, sans-serif;
+    font-family: 'Droid Sans', 'Times New Roman', sans-serif;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
@@ -227,8 +227,8 @@ a:focus {
 
 #title h1 {
     font-size: 80px;
-	font-family: 'Ubuntu', 'Times New Roman', serif
-	line-height: 100px
+	font-family: 'Ubuntu', 'Times New Roman', serif;
+	padding-bottom: 20px;
     
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
@@ -249,31 +249,232 @@ a:focus {
     
     Let's move to 'big thoughts' with centered text and custom font sizes.
 */
-#big {
-    width: 600px;
+.big {
+    width: 700px;
     text-align: center;
     font-size: 60px;
     line-height: 1;
 }
 
-#big b {
+.big b {
     display: block;
-    font-size: 250px;
-    line-height: 250px;
-}
-
-#big .thoughts {
-    font-size: 90px;
+    font-size: 100px;
     line-height: 150px;
 }
 
-/*
-    'Tiny ideas' just need some tiny styling.
-*/
-#tiny {
-    width: 500px;
-    text-align: center;
+.slidetitle {
+	padding: 0
 }
+
+.slidetitle h1 {
+	display: block;
+	width: 900px;
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.rectangle {
+	border:dashed 3px #000000;
+	text-align: center;
+}
+
+.rectanglecenter {
+	font-size: 70px;
+	margin-top: 5%; 
+	height: 90%;
+}
+
+.impress-on-map-reduce-performance0 .performance{ opacity: 1;}
+
+.performance {
+	font-size: 100px;
+	color: #FF0000;
+	font-family: 'Black Ops One', 'Ubuntu', 'New Times Roman';
+	border: solid 3px #FF0000;
+	width: 850px;
+	text-align: center;
+	height: 150px;
+	opacity: 0;
+
+	transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+	-webkit-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+	-moz-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+	-o-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+	-ms-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+}
+
+.impress-on-go-back #title {
+	opacity: 1;
+}
+
+.footnote {
+	position: absolute;
+	font-size: 25px;
+	margin-top: 40%;
+	text-align: center;
+}
+
+.dataflow-graph {
+	margin-left: -200px;
+	opacity: 0.3;
+}
+
+.dataflow-graph2 {
+	margin-left: -200px;
+	opacity: 0;
+}
+
+.impress-on-dataflow .dataflow-graph {
+	opacity: 1;
+}
+
+
+.step-description-box1 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s1 .step-description-box1 {
+	opacity: 1;
+}
+
+.step-description-box2 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s2  .step-description-box2 {
+	opacity: 1;
+}
+
+.step-description-box3 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+
+	transform: rotate(322deg) scale(1) skew(1deg) translate(0px);
+	-webkit-transform: rotate(322deg) scale(1) skew(1deg) translate(0px);
+	-moz-transform: rotate(322deg) scale(1) skew(1deg) translate(0px);
+	-o-transform: rotate(322deg) scale(1) skew(1deg) translate(0px);
+	-ms-transform: rotate(322deg) scale(1) skew(1deg) translate(0px);
+}
+
+
+.impress-on-s3  .step-description-box3 {
+	opacity: 1;
+}
+
+.step-description-box4 {
+	font-size: 45px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s4  .step-description-box4 {
+	opacity: 1;
+}
+
+
+.step-description-box5 {
+	font-size: 45px;
+	font-weight: bold;
+	opacity: 0;
+	margin-top: 400px;
+
+	transform: rotate(89deg) scale(1) skew(1deg) translate(0px);
+	-webkit-transform: rotate(89deg) scale(1) skew(1deg) translate(0px);
+	-moz-transform: rotate(89deg) scale(1) skew(1deg) translate(0px);
+	-o-transform: rotate(89deg) scale(1) skew(1deg) translate(0px);
+	-ms-transform: rotate(89deg) scale(1) skew(1deg) translate(0px);
+}
+
+.impress-on-s5  .step-description-box5 {
+	opacity: 1;
+}
+
+.step-description-box6 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s6  .step-description-box6 {
+	opacity: 1;
+}
+
+.step-description-box7 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s7  .step-description-box7 {
+	opacity: 1;
+}
+
+
+.step-description-box8 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s8  .step-description-box8 {
+	opacity: 1;
+}
+
+.step-description-box9 {
+	font-size: 35px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s9  .step-description-box9 {
+	opacity: 1;
+}
+
+
+.step-description-box10 {
+	font-size: 45px;
+	font-weight: bold;
+	opacity: 0;
+}
+
+.impress-on-s10  .step-description-box10 {
+	opacity: 1;
+}
+
+
+.step-description-box11 {
+	font-size: 45px;
+	font-weight: bold;
+	margin-left: 180px;
+	margin-top: 50px;
+	opacity: 0;
+}
+
+.impress-on-s11  .step-description-box11 {
+	opacity: 1;
+}
+
+.step-description-box12 {
+	font-size: 45px;
+	font-weight: bold;
+	opacity: 0;
+	margin-left: 200px;
+}
+
+.impress-on-s12  .step-description-box12 {
+	opacity: 1;
+}
+
+.impress-on-dataflow-revisit .dataflow-graph2 {
+	opacity: 1;
+}
+
 
 /*
     This step has some animated text ...

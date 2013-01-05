@@ -6,7 +6,7 @@
 	<title>Sailfish Presentation</title>
     <meta name="author" content="Winnie Liu" />
 
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Ubuntu' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Ubuntu|Black+Ops+One' rel='stylesheet' type='text/css'>
     <link href="css/sailfish-presentation.css" rel="stylesheet" />
     
 </head>
@@ -28,11 +28,272 @@
 			<div class="date">Jan 14 2013</div>
 	</div>
 
+	<div id="context1" class="step" data-x='1000'>
+		<div class="big">
+			<b>Data Intense Computing</b>
+		</div>
+	</div>
+
+	<div id="programming-frameworks" class="step" data-x='2000'>
+		<div class="slidetitle"><h1>Programming Frameworks &amp Models</h1></div>
+		<div style="padding-top: 50px; padding-left:10%; font-size: 30px; line-height: 70px">
+			<ul>
+				<li>Parallel Dataflow Framework (e.g Map-Reduce, Pig)</li>
+				<li>Parallel Database Management System</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="map-reduce" class="step" data-x="2300" data-z="-30000">
+		<div class="rectangle" style="height: 200px; width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+			<div class="rectanglecenter"><b>Map Reduce</b></div>
+		</div>
+		<div class="rectangle" style="height: 200px; width: 800px; margin-left: auto; margin-right: auto; ">
+			<div class="rectanglecenter"><b>Distributed File System</b></div>
+		</div>
+	</div>
+
+	<div id="map-reduce-performance0" class="step" data-x="2300" data-z="-30000">
+		<div class="performance">
+			<b>Performance ?</b>
+		</div>
+	</div>
+
+	<div class="step" data-x="3600" data-z="-30000">
+		<ul>
+			<li>
+				<b>MapReduce: A major step backwards. </b> David J. DeWitt (blog post)
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
+					<li>1. MapReduce is a step backwards in database access</li>
+					<li>2. MapReduce is a poor implementation</li>
+					<li>3. MapReduce is not novel</li>
+					<li>4. MapReduce is missing features</li>
+					<li>5. MapReduce is incompatible with the DBMS tools</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="3600" data-y="500" data-z="-30000">
+		<ul>
+			<li><b>A Comparison of Approaches to Large-Scale Data Analysis. </b>Andrew Pavlo, et al. (SIGMOD'09)
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
+					<li>TODO</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1000" data-z="-30000">
+		<ul>
+			<li><b>MapReduce: A Flexible Data Processing Tool. </b>Jefferey Dean (Google), et al. (CACM Jan 2010)
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
+					<li>1. Storage-system independent</li>
+					<li>2. Complicated transformations supported</li>
+					<li>3. Limits of current implementation</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1000" data-y="500" data-z="-30000">
+		<ul>
+			<li><b>Apache Hadoop: Best Practices and Anti-Patterns. </b>Arun C Murthy (Yahoo!) (blog post)
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
+					<li>Coalesce processing of multiple small input files into smaller number of maps and use larger HDFS block-sizes for processing very large data-sets</li>
+					<li>Ensure maps are sized so that all of map-outputs can be sorted in one pass by keeping all of them in the sort-buffer</li>
+					<li>......</li>
+				</ol>
+			</li>
+			<li><b>Starfish: A Self-tunning System for Big Data Analytics. </b> Herototos Herodotou, et al. (CIDR'11)</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="2300" data-y="700" data-z="-30000">
+		<div class="slidetitle"><h1>Drawbacks Which Both Agree</h1></div>
+		<ul style="padding-left: 15%; text-align: left; padding-top: 5%; font-size: 45px;">
+			<li>Intermediate data handling</li>
+			<li>Tuning</li>
+		</ul>
+	</div>
+
+	<div id="intermediate-data-handling" class="step" data-x="2300" data-y="700" data-z="-80000">
+		<div class="slidetitle"><h1>Intermediate Data Handling in Hadoop</h1></div>
+		<div style="margin-left: -50px;">
+			<img src="img/intermediate-data-handling.png" width="1000px"/>
+		</div>
+	</div>
+
+	<div id="intermediate-data-handling2" class="step" data-x="3800" data-y="700" data-z="-80000">
+		<div class="slidetitle"><h1 style="font-size: 25px">Intermediate Data Handling in Hadoop (Cont.)</h1></div>
+		<div style="margin-left: 200px; margin-top: 20px">
+			<img src="img/intermediate-data-handling2.png" height="600px"/>
+		</div>
+	</div>
+
+	<div class="step" data-x="4500" data-y="700" data-z="-80000">
+		<div style="margin-bottom: 300px">
+			<ul style="font-size: 40px;">
+				<li>#distince_retrievals (pulls) = <b>M * R</b> = #disk_seeks</li>
+				<li>data_per_retrieval = <b>file_size / R</b></li>
+			</ul>
+			<p style="font-size: 25px; margin-left: 15%">where M = #map_tasks, R = #reduce_tasks</p>
+		</div>
+	</div>
+
+	<div class="step" data-x="4500" data-y="900" data-z="-80000">
+		<img src="img/table1.png" width="1000px"/>
+	</div>
+
+	<!-- Sailfish Framework -->
+
+	<div id="go-back" class="step">
+	</div>
+
+	<div id="assumption" class="step" data-x="-1300">
+		<div class="slidetitle"><h1 style="font-size: 100px">ASSUMPTIONS:</h1></div>
+		<p style="text-align: center; font-size: 50px">Blocking step</p>
+		<p style="text-align: center; font-size: 50px">Disk storage</p>
+		<div class="footnote">
+			Blocking step is popular in parallel dataflow models.
+		</div>
+	</div>
+
+	<div id="basic-idea" class="step" data-x="-2300">
+		<div class="slidetitle"><h1 style="font-size: 100px">Basic Idea</h1></div>
+		<ul>
+			<li><b>Goal: </b> Minimize #disk_seeks </li>
+			<li><b>Approach: </b> Baching data I/O</li>
+			<li><b>Why: </b>
+				<ul style="margin-left: 100px">
+					<li>(O(M*R)&rarr;O(R))</li>
+					<li>Addressing Skew</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-2300" data-z="-30000">
+		<table border="0" cyellspacing="100" cellpadding="100" style="text-align: center;">
+			<tr>
+				<td>#disk_seeks = M*R</td>
+				<td>#disk_seeks = R</td>
+			</tr>
+			<tr>
+				<td><div style="padding: 10px"><img src="img/intermediate-data-handling2.png" height="500px"></div></td>
+				<td><div style="padding: 10px"><img src="img/figure3.png" height="500px"></div></td>
+			</tr>
+			<tr>
+				<td>Map-Reduce</td>
+				<td>Sailfish</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="step" data-x="-2300" data-y="500" data-z="-30000">
+		<div class="slidetitle">
+			<h1>Addressing Skew: TODO</h1>
+		</div>
+		
+	</div>
+
+	<div id="dataflow" class="step" data-x="-3800">
+		<div class="dataflow-graph">
+			<img src="img/dataflow.svg" height="1800px"/>
+		</div>
+	</div>
+	
+	<div id="s1" class="step" data-x="-4050" data-y="-50" data-z="-500">
+		<div class="step-description-box1">
+			<p>&lt;partition, key, value&gt; </p>stream
+		</div>
+	</div>
+
+	<div id="s2" class="step" data-x="-4050" data-y="80" data-z="-500">
+		<div class="step-description-box2">
+			buffer the records
+		</div>
+	</div>
+
+	<div id="s3" class="step" data-x="-3950" data-y="-150" data-z="-500">
+		<div class="step-description-box3">
+			flush records to the chunkserver
+		</div>
+	</div>
+
+	<div id="s4" class="step" data-x="-3650" data-y="-150" data-z="-500">
+		<div class="step-description-box4">
+			<p>commits</p>
+			<p style="font-size: 25px">record_append()</p>
+		</div>
+	</div>
+
+	<div id="s5" class="step" data-x="-3750" data-y="0" data-z="-500">
+		<div class="step-description-box5">
+			<p>invokes</p>
+		</div>
+	</div>
+	
+	<div id="s6" class="step" data-x="-3700" data-y="0" data-z="-500">
+		<div class="step-description-box6">
+			<p>loads</p>
+			<p>a chunk</p>
+		</div>
+	</div>
+
+	<div id="s7" class="step" data-x="-3600" data-y="0" data-z="-500">
+		<div class="step-description-box7">
+			<p>writes</p>
+			<p>back</p>
+		</div>
+	</div>
+	
+	<div id="s8" class="step" data-x="-3500" data-y="-80" data-z="-500">
+		<div class="step-description-box8">
+			<p>determines #reducers</p>
+			<p>informs Hadoop JobTracker</p>
+		</div>
+	</div>
+
+	<div id="s9" class="step" data-x="-3350" data-y="-80" data-z="-650">
+		<div class="step-description-box9">
+			<p>obtains work assignment</p>
+			<p>(chunks in I-file)</p>
+		</div>
+	</div>
+
+	<div id="s10" class="step" data-x="-3400" data-y="0" data-z="-650">
+		<div class="step-description-box10">
+			<p>pulls records</p>
+			<p style="font-size: 25px;">scan()</p>
+		</div>
+	</div>
+
+	<div id="s11" class="step" data-x="-3300" data-y="50" data-z="-650">
+		<div class="step-description-box11">
+			<p>merges chunks</p>
+			<p>filter</p>
+		</div>
+	</div>
+
+	<div id="s12" class="step" data-x="-3300" data-y="-50" data-z="-650">
+		<div class="step-description-box12">
+			<p>&lt;key, value&gt;</p>
+			<p>streams</p>
+		</div>
+	</div>
+
+	<div id="dataflow-revisit" class="step" data-x="-3800">
+		<div class="dataflow-graph2">
+			<img src="img/dataflow.svg" height="1800px"/>
+		</div>
+	</div>
 
 
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-    </div>
-
+	<div id="overview" class="step" data-scale="5">
+		
+	</div>
+	
 </div>
 
 <script src="js/impress.js"></script>
