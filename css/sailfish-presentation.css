@@ -41,8 +41,7 @@ q:before, q:after {
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    /*border-collapse: collapse;*/
 }
 
 /*
@@ -195,17 +194,6 @@ a:focus {
     white-space: nowrap;
 }
 
-/*
-    And now we start to style each step separately.
-    
-    I agree that this may be not the most efficient, object-oriented and
-    scalable way of styling, but most of steps have quite a custom look
-    and typography tricks here and there, so they had to be styles separately.
-
-    First is the title step with a big <h1> (no room for padding) and some
-    3D positioning along Z axis.
-*/
-
 #title {
     padding: 0;
 }
@@ -250,7 +238,7 @@ a:focus {
     Let's move to 'big thoughts' with centered text and custom font sizes.
 */
 .big {
-    width: 700px;
+    width: 800px;
     text-align: center;
     font-size: 60px;
     line-height: 1;
@@ -263,12 +251,12 @@ a:focus {
 }
 
 .slidetitle {
-	padding: 0
+	padding: 0;
+	width: 900px;
 }
 
 .slidetitle h1 {
 	display: block;
-	width: 900px;
 	text-align: center;
 	font-size: 50px;
 	font-weight: bold;
@@ -305,6 +293,16 @@ a:focus {
 }
 
 .impress-on-go-back #title {
+	opacity: 1;
+}
+
+.real-sailfish-img {
+	opacity: 0;
+	margin-left: 15%;
+	margin-bottom: 200px;
+}
+
+.impress-on-real-sailfish .real-sailfish-img {
 	opacity: 1;
 }
 

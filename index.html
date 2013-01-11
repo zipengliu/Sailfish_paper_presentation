@@ -30,15 +30,16 @@
 
 	<div id="context1" class="step" data-x='1000'>
 		<div class="big">
-			<b>Data Intense Computing</b>
+			<b>Data Intensive Computing</b>
 		</div>
 	</div>
 
 	<div id="programming-frameworks" class="step" data-x='2000'>
-		<div class="slidetitle"><h1>Programming Frameworks &amp Models</h1></div>
-		<div style="padding-top: 50px; padding-left:10%; font-size: 30px; line-height: 70px">
+		<div class="slidetitle"><h1 style="font-size: 80px">Frameworks &amp Models</h1></div>
+		<div style="padding-top: 50px; padding-left:0%; font-size: 55px; line-height: 70px; width: 1000px">
 			<ul>
-				<li>Parallel Dataflow Framework (e.g Map-Reduce, Pig)</li>
+				<li>Parallel Dataflow Framework 
+				<p style="padding-left: 20%">(e.g Map-Reduce, Pig, Hive)</p></li>
 				<li>Parallel Database Management System</li>
 			</ul>
 		</div>
@@ -63,22 +64,24 @@
 		<ul>
 			<li>
 				<b>MapReduce: A major step backwards. </b> David J. DeWitt (blog post)
-				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
-					<li>1. MapReduce is a step backwards in database access</li>
-					<li>2. MapReduce is a poor implementation</li>
-					<li>3. MapReduce is not novel</li>
-					<li>4. MapReduce is missing features</li>
-					<li>5. MapReduce is incompatible with the DBMS tools</li>
+				<ol style="padding-left: 3%; padding-top: 5%; font-size: 35px; list-style-type: disc">
+					<li> MapReduce is a step backwards in database access</li>
+					<li> MapReduce is a poor implementation</li>
+					<li> MapReduce is not novel</li>
+					<li> MapReduce is missing features</li>
+					<li> MapReduce is incompatible with the DBMS tools</li>
 				</ol>
 			</li>
 		</ul>
 	</div>
 
-	<div class="step" data-x="3600" data-y="500" data-z="-30000">
+	<div class="step" data-x="3600" data-y="600" data-z="-30000">
 		<ul>
 			<li><b>A Comparison of Approaches to Large-Scale Data Analysis. </b>Andrew Pavlo, et al. (SIGMOD'09)
-				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
-					<li>TODO</li>
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 35px; list-style-type: disc">
+					<li>Parallel DBMS provides high-level programming environment for data processing at scale</li>
+					<li>Structured data (schema)</li>
+					<li>Commercial DBMS better performance than Hadoop</li>
 				</ol>
 			</li>
 		</ul>
@@ -87,22 +90,22 @@
 	<div class="step" data-x="1000" data-z="-30000">
 		<ul>
 			<li><b>MapReduce: A Flexible Data Processing Tool. </b>Jefferey Dean (Google), et al. (CACM Jan 2010)
-				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
-					<li>1. Storage-system independent</li>
-					<li>2. Complicated transformations supported</li>
-					<li>3. Limits of current implementation</li>
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 35px; list-style-type: disc">
+					<li> Storage-system independent</li>
+					<li> Complicated transformations supported <p>(esp. for unstructured data)</p></li>
+					<li> Limits of current implementation (esp. for Hadoop)</li>
 				</ol>
 			</li>
 		</ul>
 	</div>
 
-	<div class="step" data-x="1000" data-y="500" data-z="-30000">
+	<div class="step" data-x="1000" data-y="700" data-z="-30000">
 		<ul>
 			<li><b>Apache Hadoop: Best Practices and Anti-Patterns. </b>Arun C Murthy (Yahoo!) (blog post)
-				<ol style="padding-left: 5%; padding-top: 5%; font-size: 25px;">
+				<ol style="padding-left: 5%; padding-top: 5%; margin-bottom: 5%; font-size: 25px; list-style-type: disc">
 					<li>Coalesce processing of multiple small input files into smaller number of maps and use larger HDFS block-sizes for processing very large data-sets</li>
 					<li>Ensure maps are sized so that all of map-outputs can be sorted in one pass by keeping all of them in the sort-buffer</li>
-					<li>......</li>
+					<li>...</li>
 				</ol>
 			</li>
 			<li><b>Starfish: A Self-tunning System for Big Data Analytics. </b> Herototos Herodotou, et al. (CIDR'11)</li>
@@ -110,12 +113,23 @@
 	</div>
 
 	<div class="step" data-x="2300" data-y="700" data-z="-30000">
-		<div class="slidetitle"><h1>Drawbacks Which Both Agree</h1></div>
-		<ul style="padding-left: 15%; text-align: left; padding-top: 5%; font-size: 45px;">
-			<li>Intermediate data handling</li>
-			<li>Tuning</li>
+		<div class="slidetitle" style="margin-left:-100px"><h1>Map-Reduce (Hadoop) VS. DBMS</h1></div>
+		<div style="margin-right: 800px; margin-top: 100px">
+			<img src="img/f0.gif" width="300" />
+		</div>
+		<div style="margin-top: -320px; margin-left: 400px;">
+			<img src="img/f1.gif" width="300" />
+		</div>
+	</div>
+
+	<div class="step" data-x="2300" data-y="1700" data-z="-30000">
+		<div class="slidetitle" ><h1 style="font-size: 80px">Drawbacks - Both Agree</h1></div>
+		<ul style="padding-left: 5%; text-align: left; padding-top: 5%; font-size: 45px; width: 900px">
+			<li>Intermediate data handling inefficiency</li>
+			<li>Tuning complexity</li>
 		</ul>
 	</div>
+
 
 	<div id="intermediate-data-handling" class="step" data-x="2300" data-y="700" data-z="-80000">
 		<div class="slidetitle"><h1>Intermediate Data Handling in Hadoop</h1></div>
@@ -143,6 +157,12 @@
 
 	<div class="step" data-x="4500" data-y="900" data-z="-80000">
 		<img src="img/table1.png" width="1000px"/>
+	</div>
+
+	<div id="real-sailfish" class="step" data-x="2300" data-y="1700" data-z="-30000">
+		<div class="real-sailfish-img">
+			<img src="img/real-sailfish.jpg" width="600"/>
+		</div>
 	</div>
 
 	<!-- Sailfish Framework -->
@@ -190,10 +210,51 @@
 		</table>
 	</div>
 
-	<div class="step" data-x="-2300" data-y="500" data-z="-30000">
+	<div class="step" data-x="-1300" data-z="-30000">
 		<div class="slidetitle">
-			<h1>Addressing Skew: TODO</h1>
+			<h1>The Trick:</h1>
+			<h1>What matters is #disk_seeks <p>ON THE RIGHT</p></h1>
 		</div>
+		<p style="color: red; font-size: 50px; padding-left: 70%; font-family: 'ubuntu';">WHY?</p>
+	</div>
+
+	<div class="step" data-x="-300" data-z="-30000">
+		<div class="slidetitle">
+			<h1>I-file Abstraction & API</h1>
+		</div>
+		<ol style="margin-left: 20%; width:700px; list-style-type: disc" >
+			<li>create_file(filename)</li>
+			<li>record_append(fd, &lt;key, value&gt;)</li>
+			<li>scan(fd, buffer, lower_key, upper_key)</li>
+		</ol>
+	</div>
+
+	<div class="step" data-x="-300" data-y="700" data-z="-30000">
+			<img src="img/ifile.png" width="900"/>
+	</div>
+
+	<div class="step" data-x="-1300" data-y="700" data-z="-30000">
+			<img src="img/appending.png" width="800"/>
+	</div>
+
+	<div class="step" data-x="-2500" data-y="800" data-z="-30000">
+		<div class="slidetitle" style="width: 700px; padding-right: -300px; margin-bottom: 50px;">
+			<h1>Addressing Skew</h1>
+		</div>
+		<table style="margin-left: -100px; padding: 25px; text-align: center; width:1000px;">
+			<tr style="font-weight: bold;">
+				<th>Problem</th>
+				<th>Solution</th>
+			</tr>
+			<tr>
+				<td><p>blocking</p>
+					<p>"straggeler"</p>
+				</td>
+				<td><p>decouple sorting from map tasks&rarr;</p>
+					<p>finer granularity of sorting unit</p>
+				</td>
+			</tr>
+		</table>
 		
 	</div>
 
@@ -289,6 +350,91 @@
 		</div>
 	</div>
 
+	<div class="step" data-x="-3800" data-y="1000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Analysis of #disk_seeks</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; width: 900px;">
+			<li>Map
+				<p>3 * #ifiles * #chunks_in_ifile</p>
+			</li>
+			<li>Reduce
+				<p>&prop; #chunks_in_ifle * #reducers</p>
+				<p>(depends on data volumn rather than #mappers)</p>
+			</li>
+		</ul>
+		<p style="margin-top: 30px; color: red; font-size: 60px; text-align: center;">Reduce #chunks_in_ifile!</p>
+	</div>
+
+	<div class="step" data-x="-2500" data-y="1000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Tradeoffs & Considerations</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 45px; width: 900px;">
+			<li>#chunks_in_ifile vs. appending parallelism</li>
+			<li>fault tolerance vs. aggregation size</li>
+			<li>more?</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-1500" data-y="1000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Evaluation</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 45px; margin-left: 250px; width: 900px;">
+			<li>Cluster Setup</li>
+			<li>Synthetic Benchmark</li>
+			<li>Real Job Mix</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-1500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Cluster Setup</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
+			<li>#machines = 150 = 5 * 30</li>
+			<li>2 quad-core Intel Xeon E5420, 16GB RAM, 4*750GB drives</li>
+			<li>1GB network interface / cable</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Synthetic Benchmark</h1>
+		</div>
+		<img src="img/f9.png" width="800" />
+	</div>
+
+	<div class="step" data-x="500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Synthetic Benchmark (Cont.)</h1>
+		</div>
+		<img src="img/f10.png" width="800" />
+	</div>
+
+	<div class="step" data-x="1500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Synthetic Benchmark (Cont.)</h1>
+		</div>
+		<img src="img/f8.png" width="800" />
+	</div>
+
+	<div class="step" data-x="2800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Actual Jobs</h1>
+		</div>
+		<div style="margin-left: 20%;">
+			<img src="img/t3.png" height="500" />
+		</div>
+	</div>
+
+	<div class="step" data-x="3800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Actual Jobs (Cont.)</h1>
+		</div>
+		<img src="img/f11.png" width="800" />
+	</div>
 
 	<div id="overview" class="step" data-scale="5">
 		
