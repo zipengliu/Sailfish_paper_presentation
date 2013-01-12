@@ -364,6 +364,7 @@
 			</li>
 		</ul>
 		<p style="margin-top: 30px; color: red; font-size: 60px; text-align: center;">Reduce #chunks_in_ifile!</p>
+		<p style="font-size: 30px; text-align: right;">(note: chunk size &lt;= maximum chunk size in KFS)</p>
 	</div>
 
 	<div class="step" data-x="-2500" data-y="1000">
@@ -372,7 +373,7 @@
 		</div>
 		<ul style="list-style-type: disc; font-size: 45px; width: 900px;">
 			<li>#chunks_in_ifile vs. appending parallelism</li>
-			<li>fault tolerance vs. aggregation size</li>
+			<li>fault tolerance vs. aggregation size (performance)</li>
 			<li>more?</li>
 		</ul>
 	</div>
@@ -434,6 +435,44 @@
 			<h1>Actual Jobs (Cont.)</h1>
 		</div>
 		<img src="img/f11.png" width="800" />
+	</div>
+
+	<div class="step" data-x="4500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Actual Jobs (Cont.)</h1>
+			<h1>Perfomrance Gains from:</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
+			<li>Using I-files for aggregation</li>
+			<li>Decoupling sorting from map task execution</li>
+			<li>Making reduce phase dynamic</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="5800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Impact of Intermediate Data Loss</h1>
+		</div>
+		E (# of recomputing map tasks) is:
+		<table style="margin-left: -100px; padding: 25px; text-align: center; width:1000px;">
+			<tr>
+				<th style="font-weight: bold;">Hadoop</th>
+				<td> #tasks_per_node &frasl; #drives_per_node</td>
+			</tr>
+			<tr>
+				<th style="font-weight: bold;">Sailfish</th>
+				<td> #tasks_per_rack &frasl; #drives_per_node</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="step" data-x="5800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Issues of Sailfish</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
+			<li>TODO</li>
+		</ul>
 	</div>
 
 	<div id="overview" class="step" data-scale="5">

@@ -98,3 +98,14 @@
 	- decoupling: address the skew (LogProc, NdayModel)
 	  - Hadoop is slow whereever there is data skew
 	- dynamic: #reducers depend on data volumn
+
+
+## Issues ############################################################
+
+* HDFS does not support concurrent writes
+  - is the performance gain actually come from the concurrent append?
+  - just another viewpoint of batching I/O
+
+* Intermediate data are written twice, read twice
+
+* Doubt the impact of data loss
