@@ -1,3 +1,62 @@
+TODO:
+* finish the drawbacks discussed in the debate
+* add more discussion
+* chop off some graphs of the evaluation
+*
+
+## Context & Background ##############################################
+
+### Data Intensive Computing Background
+
+### MapReduce vs. Parallel DBMS
+
+* brief intro to Parallel DBMS
+  - database management system allows you to store, modify, extract
+	information from a database
+  - parallel: use parallelization of operations to improve the
+	perfomrnance
+
+* talk breifly about the literature of the debate
+
+* concreate comparison
+  - structured data
+    - DBMS says it's good:
+	  - preventing data corrunption
+	  - seperation from application --> portability, easy for data
+		sharing
+	- MR
+	  - no explicit schema
+	  - but the data structure is programmed logically
+  - programming language
+    - DBMS
+	  - high-level, descriptive
+	  - but has far less expressive power 
+	  - thus Ruby on Rails etc. 
+	- MR
+	  - low-level, procedural
+	  - powerful to do complicated caculation 
+	  - Pig, Hive
+  - fault tolerance
+    - DBMS
+	  - enforce data integrity
+	  - do not save intermediate data on disk
+	  - fails --> whole transaction fails, redo
+	- MR
+	  - have intermedate data stored on disk
+	  - fails --> part of the computation redo
+	  - rely on the DFS underneath
+  - performance
+    - unfair competition
+	- depend largly on implementation
+
+* small examples to illustrate the comparson
+  - TODO
+
+### Drawbacks in MapReduce
+
+
+## Sailfish Basic ####################################################
+
 ### Reducing #disk_seeks
 
 * in the reduce phase! no the map phase
