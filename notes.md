@@ -1,14 +1,19 @@
 TODO:
-* finish the drawbacks discussed in the debate
-* add more discussion
 * chop off some graphs of the evaluation
-*
 
 ## Context & Background ##############################################
 
 ### Data Intensive Computing Background
 
+* the volumn of processing data is growing exponentially
+  - more than a T per day (common)
+* some example:
+  - google search
+  - tweets push
+
 ### MapReduce vs. Parallel DBMS
+
+* Facebook, Google;  Twitter
 
 * brief intro to Parallel DBMS
   - database management system allows you to store, modify, extract
@@ -21,7 +26,7 @@ TODO:
 * concreate comparison
   - structured data
     - DBMS says it's good:
-	  - preventing data corrunption
+	  - preventing data corruption (DBMS enforce integrity)
 	  - seperation from application --> portability, easy for data
 		sharing
 	- MR
@@ -34,23 +39,44 @@ TODO:
 	  - thus Ruby on Rails etc. 
 	- MR
 	  - low-level, procedural
-	  - powerful to do complicated caculation 
+	  - powerful to do complicated caculation (but rare)
 	  - Pig, Hive
   - fault tolerance
     - DBMS
 	  - enforce data integrity
 	  - do not save intermediate data on disk
-	  - fails --> whole transaction fails, redo
+	  - fails --> whole transaction fails, redo (for transactional
+		workloads)
+	  - efforts to improve it: pipelining intermediate result, check
+		pointing (but harm performance)
 	- MR
 	  - have intermedate data stored on disk
 	  - fails --> part of the computation redo
 	  - rely on the DFS underneath
+	- fact:
+	  - DBMS does not scale as MR (<100 nodes) --> fewer failure
+	  - DBMS require homogeneity
   - performance
     - unfair competition
 	- depend largly on implementation
 
-* small examples to illustrate the comparson
+* small examples to illustrate the comparison
   - TODO
+
+
+### Hybrid System
+
+* Combine DBMS and MR to one, trying to approximate the efficiency of
+  Parallel DBMS and the scalability, flexibility and fault tolerance of
+  Map Reduce
+
+* basic idea:
+  - connect multiple single node database systems using Hadoop as task
+	coordinator and network communication layer
+  - actual computing work is done in a DBMS
+
+* start-up company begin to take this project 
+
 
 ### Drawbacks in MapReduce
 
