@@ -1,0 +1,515 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<title>Sailfish Presentation</title>
+    <meta name="author" content="Winnie Liu" />
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Ubuntu|Black+Ops+One' rel='stylesheet' type='text/css'>
+    <link href="css/sailfish-presentation.css" rel="stylesheet" />
+    
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+	<!-- The title, or the first slide -->
+	<div id="title" class="step">
+		<h1>Sailfish: A Framework For Large Scale Data Processing</h1>
+			<div class="author">Sriram Rao (Microsoft) et al.</div>
+			<div class="author">Presented by Winnie Liu</div>
+			<div class="date">Jan 14 2013</div>
+	</div>
+
+	<div id="context1" class="step" data-x='1000'>
+		<div class="big">
+			<b>Data Intensive Computing</b>
+		</div>
+	</div>
+
+	<div id="programming-frameworks" class="step" data-x='2000'>
+		<div class="slidetitle"><h1 style="font-size: 80px">Frameworks &amp Models</h1></div>
+		<div style="padding-top: 50px; padding-left:0%; font-size: 55px; line-height: 70px; width: 1000px">
+			<ul>
+				<li>Parallel Dataflow Framework 
+				<p style="padding-left: 20%">(e.g Map-Reduce, Pig, Hive)</p></li>
+				<li>Parallel Database Management System</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="map-reduce" class="step" data-x="2300" data-z="-30000">
+		<div class="rectangle" style="height: 200px; width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+			<div class="rectanglecenter"><b>Map Reduce</b></div>
+		</div>
+		<div class="rectangle" style="height: 200px; width: 800px; margin-left: auto; margin-right: auto; ">
+			<div class="rectanglecenter"><b>Distributed File System</b></div>
+		</div>
+	</div>
+
+	<div id="map-reduce-performance0" class="step" data-x="2300" data-z="-30000">
+		<div class="performance">
+			<b>Performance ?</b>
+		</div>
+	</div>
+
+	<div class="step" data-x="3600" data-z="-30000">
+		<ul>
+			<li>
+				<b>MapReduce: A major step backwards. </b> David J. DeWitt (blog post)
+				<ol style="padding-left: 3%; padding-top: 5%; font-size: 35px; list-style-type: disc">
+					<li> MapReduce is a step backwards in database access</li>
+					<li> MapReduce is a poor implementation</li>
+					<li> MapReduce is not novel</li>
+					<li> MapReduce is missing features</li>
+					<li> MapReduce is incompatible with the DBMS tools</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="3600" data-y="600" data-z="-30000">
+		<ul>
+			<li><b>A Comparison of Approaches to Large-Scale Data Analysis. </b>Andrew Pavlo, et al. (SIGMOD'09)
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 35px; list-style-type: disc">
+					<li>Parallel DBMS provides high-level programming environment for data processing at scale</li>
+					<li>Structured data (schema)</li>
+					<li>Commercial DBMS better performance than Hadoop</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1000" data-z="-30000">
+		<ul>
+			<li><b>MapReduce: A Flexible Data Processing Tool. </b>Jefferey Dean (Google), et al. (CACM Jan 2010)
+				<ol style="padding-left: 5%; padding-top: 5%; font-size: 35px; list-style-type: disc">
+					<li> Storage-system independent</li>
+					<li> Complicated transformations supported <p>(esp. for unstructured data)</p></li>
+					<li> Limits of current implementation (esp. for Hadoop)</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1000" data-y="700" data-z="-30000">
+		<ul>
+			<li><b>Apache Hadoop: Best Practices and Anti-Patterns. </b>Arun C Murthy (Yahoo!) (blog post)
+				<ol style="padding-left: 5%; padding-top: 5%; margin-bottom: 5%; font-size: 25px; list-style-type: disc">
+					<li>Coalesce processing of multiple small input files into smaller number of maps and use larger HDFS block-sizes for processing very large data-sets</li>
+					<li>Ensure maps are sized so that all of map-outputs can be sorted in one pass by keeping all of them in the sort-buffer</li>
+					<li>...</li>
+				</ol>
+			</li>
+			<li><b>Starfish: A Self-tunning System for Big Data Analytics. </b> Herototos Herodotou, et al. (CIDR'11)</li>
+		</ul>
+	</div>
+
+
+	<div class="step" data-x="2300" data-y="700" data-z="-30000">
+		<div class="slidetitle" style="margin-left:-100px"><h1>Map-Reduce (Hadoop) VS. DBMS</h1></div>
+		<div style="margin-left: -200px; margin-top: 100px">
+			<img src="img/f0.gif" width="300" />
+		</div>
+		<div style="margin-top: -320px; margin-left: 700px;">
+			<img src="img/f1.gif" width="300" />
+		</div>
+	</div>
+
+	<div id="comparison" class="step", data-x="2300" data-y="700" data-z="-30000">
+		<ul style="text-align: center; padding-top: 5%; font-size: 45px; width: 800px">
+			<li>Structured Data</li>
+			<li>Programming Language</li>
+			<li>Fault Tolerance</li>
+			<li>Performance</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="2300" data-y="1700" data-z="-30000">
+		<div class="slidetitle" style="margin-left:-100px"><h1>There Is Always a Hybrid</h1></div>
+		<div style="margin-left: -200px; margin-top: 100px">
+			<img src="img/shakehand.jpg" width="300" />
+		</div>
+		<ol style="margin-left: 25%; text-align: left; margin-top: -200px; font-size: 35px; width: 900px; list-style-type: disc;">
+			<li>HadoopDB (Azza Abouzeid et al. VLDB 2009)
+				<ol style="padding-left: 5%; text-align: left; font-size: 30px; width: 900px; list-style-type: disc;">
+					<li>multiple single-node DBMS</li>
+					<li>Hadoop job coordinator, network communication layer</li>
+				</ol>
+			</li>
+			<li style="padding-top: 5%">Hadoop++ (Jens Dittrich et al. VLDB 2010)</li>
+		</ol>
+	</div>
+
+	<div class="step" data-x="2300" data-y="2700" data-z="-30000">
+		<div class="slidetitle" ><h1 style="font-size: 80px">Drawbacks - Both Agree</h1></div>
+		<ul style="padding-left: 5%; text-align: left; padding-top: 5%; font-size: 45px; width: 900px">
+			<li>Intermediate data handling inefficiency</li>
+			<li>Tuning complexity</li>
+		</ul>
+	</div>
+
+
+	<div id="intermediate-data-handling" class="step" data-x="2300" data-y="700" data-z="-80000">
+		<div class="slidetitle"><h1>Intermediate Data Handling in Hadoop</h1></div>
+		<div style="margin-left: -50px;">
+			<img src="img/intermediate-data-handling.png" width="1000px"/>
+		</div>
+	</div>
+
+	<div id="intermediate-data-handling2" class="step" data-x="3800" data-y="700" data-z="-80000">
+		<div class="slidetitle"><h1 style="font-size: 25px">Intermediate Data Handling in Hadoop (Cont.)</h1></div>
+		<div style="margin-left: 200px; margin-top: 20px">
+			<img src="img/intermediate-data-handling2.png" height="600px"/>
+		</div>
+	</div>
+
+	<div class="step" data-x="4500" data-y="700" data-z="-80000">
+		<div style="margin-bottom: 300px">
+			<ul style="font-size: 40px;">
+				<li>#distince_retrievals (pulls) = <b>M * R</b> = #disk_seeks</li>
+				<li>data_per_retrieval = <b>file_size / R</b></li>
+			</ul>
+			<p style="font-size: 25px; margin-left: 15%">where M = #map_tasks, R = #reduce_tasks</p>
+		</div>
+	</div>
+
+	<div class="step" data-x="4500" data-y="900" data-z="-80000">
+		<img src="img/table1.png" width="1000px"/>
+	</div>
+
+	<div id="real-sailfish" class="step" data-x="2300" data-y="1700" data-z="-30000">
+		<div class="real-sailfish-img">
+			<img src="img/real-sailfish.jpg" width="600"/>
+		</div>
+	</div>
+
+	<!-- Sailfish Framework -->
+
+	<div id="go-back" class="step">
+	</div>
+
+	<div id="assumption" class="step" data-x="-1300">
+		<div class="slidetitle"><h1 style="font-size: 100px">ASSUMPTIONS:</h1></div>
+		<p style="text-align: center; font-size: 50px">Blocking step</p>
+		<p style="text-align: center; font-size: 50px">Disk storage</p>
+		<div class="footnote">
+			Blocking step is popular in parallel dataflow models.
+		</div>
+	</div>
+
+	<div id="basic-idea" class="step" data-x="-2300">
+		<div class="slidetitle"><h1 style="font-size: 100px">Basic Idea</h1></div>
+		<ul>
+			<li><b>Goal: </b> Minimize #disk_seeks </li>
+			<li><b>Approach: </b> Baching data I/O</li>
+			<li><b>Why: </b>
+				<ul style="margin-left: 100px">
+					<li>(O(M*R)&rarr;O(R))</li>
+					<li>Addressing Skew</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-2300" data-z="-30000">
+		<table border="0" cyellspacing="100" cellpadding="100" style="text-align: center;">
+			<tr>
+				<td>#disk_seeks = M*R</td>
+				<td>#disk_seeks = R</td>
+			</tr>
+			<tr>
+				<td><div style="padding: 10px"><img src="img/intermediate-data-handling2.png" height="500px"></div></td>
+				<td><div style="padding: 10px"><img src="img/figure3.png" height="500px"></div></td>
+			</tr>
+			<tr>
+				<td>Map-Reduce</td>
+				<td>Sailfish</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="step" data-x="-1300" data-z="-30000">
+		<div class="slidetitle">
+			<h1>The Trick:</h1>
+			<h1>What matters is #disk_seeks <p>ON THE RIGHT</p></h1>
+		</div>
+		<p style="color: red; font-size: 50px; padding-left: 70%; font-family: 'ubuntu';">WHY?</p>
+	</div>
+
+	<div class="step" data-x="-300" data-z="-30000">
+		<div class="slidetitle">
+			<h1>I-file Abstraction & API</h1>
+		</div>
+		<ol style="margin-left: 20%; width:700px; list-style-type: disc" >
+			<li>create_file(filename)</li>
+			<li>record_append(fd, &lt;key, value&gt;)</li>
+			<li>scan(fd, buffer, lower_key, upper_key)</li>
+		</ol>
+	</div>
+
+	<div class="step" data-x="-300" data-y="700" data-z="-30000">
+			<img src="img/ifile.png" width="900"/>
+	</div>
+
+	<div class="step" data-x="-1300" data-y="700" data-z="-30000">
+			<img src="img/appending.png" width="800"/>
+	</div>
+
+	<div class="step" data-x="-2500" data-y="800" data-z="-30000">
+		<div class="slidetitle" style="width: 700px; padding-right: -300px; margin-bottom: 50px;">
+			<h1>Addressing Skew</h1>
+		</div>
+		<table style="margin-left: -100px; padding: 25px; text-align: center; width:1000px;">
+			<tr style="font-weight: bold;">
+				<th>Problem</th>
+				<th>Solution</th>
+			</tr>
+			<tr>
+				<td><p>blocking</p>
+					<p>"straggeler"</p>
+				</td>
+				<td><p>decouple sorting from map tasks&rarr;</p>
+					<p>finer granularity of sorting unit</p>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+
+	<div id="dataflow" class="step" data-x="-3800">
+		<div class="dataflow-graph">
+			<img src="img/dataflow.svg" height="1800px"/>
+		</div>
+	</div>
+	
+	<div id="s1" class="step" data-x="-4050" data-y="-50" data-z="-500">
+		<div class="step-description-box1">
+			<p>&lt;partition, key, value&gt; </p>stream
+		</div>
+	</div>
+
+	<div id="s2" class="step" data-x="-4050" data-y="80" data-z="-500">
+		<div class="step-description-box2">
+			buffer the records
+		</div>
+	</div>
+
+	<div id="s3" class="step" data-x="-3950" data-y="-150" data-z="-500">
+		<div class="step-description-box3">
+			flush records to the chunkserver
+		</div>
+	</div>
+
+	<div id="s4" class="step" data-x="-3650" data-y="-150" data-z="-500">
+		<div class="step-description-box4">
+			<p>commits</p>
+			<p style="font-size: 25px">record_append()</p>
+		</div>
+	</div>
+
+	<div id="s5" class="step" data-x="-3750" data-y="0" data-z="-500">
+		<div class="step-description-box5">
+			<p>invokes</p>
+		</div>
+	</div>
+	
+	<div id="s6" class="step" data-x="-3700" data-y="0" data-z="-500">
+		<div class="step-description-box6">
+			<p>loads</p>
+			<p>a chunk</p>
+		</div>
+	</div>
+
+	<div id="s7" class="step" data-x="-3600" data-y="0" data-z="-500">
+		<div class="step-description-box7">
+			<p>writes</p>
+			<p>back</p>
+		</div>
+	</div>
+	
+	<div id="s8" class="step" data-x="-3500" data-y="-80" data-z="-500">
+		<div class="step-description-box8">
+			<p>determines #reducers</p>
+			<p>informs Hadoop JobTracker</p>
+		</div>
+	</div>
+
+	<div id="s9" class="step" data-x="-3350" data-y="-80" data-z="-650">
+		<div class="step-description-box9">
+			<p>obtains work assignment</p>
+			<p>(chunks in I-file)</p>
+		</div>
+	</div>
+
+	<div id="s10" class="step" data-x="-3400" data-y="0" data-z="-650">
+		<div class="step-description-box10">
+			<p>pulls records</p>
+			<p style="font-size: 25px;">scan()</p>
+		</div>
+	</div>
+
+	<div id="s11" class="step" data-x="-3300" data-y="50" data-z="-650">
+		<div class="step-description-box11">
+			<p>merges chunks</p>
+			<p>filter</p>
+		</div>
+	</div>
+
+	<div id="s12" class="step" data-x="-3300" data-y="-50" data-z="-650">
+		<div class="step-description-box12">
+			<p>&lt;key, value&gt;</p>
+			<p>streams</p>
+		</div>
+	</div>
+
+	<div id="dataflow-revisit" class="step" data-x="-3800">
+		<div class="dataflow-graph2">
+			<img src="img/dataflow.svg" height="1800px"/>
+		</div>
+	</div>
+
+	<div class="step" data-x="-3800" data-y="1000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Analysis of #disk_seeks</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; width: 900px;">
+			<li>Map
+				<p>3 * #ifiles * #chunks_in_ifile</p>
+			</li>
+			<li>Reduce
+				<p>&prop; #chunks_in_ifle * #reducers</p>
+				<p>(depends on data volumn rather than #mappers)</p>
+			</li>
+		</ul>
+		<p style="margin-top: 30px; color: red; font-size: 60px; text-align: center;">Reduce #chunks_in_ifile!</p>
+		<p style="font-size: 30px; text-align: right;">(note: chunk size &lt;= maximum chunk size in KFS)</p>
+	</div>
+
+	<div class="step" data-x="-2500" data-y="1000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Tradeoffs & Considerations</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 45px; width: 900px;">
+			<li>#chunks_in_ifile vs. appending parallelism</li>
+			<li>fault tolerance vs. aggregation size (performance)</li>
+			<li>more?</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-1500" data-y="1000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Evaluation</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 45px; margin-left: 250px; width: 900px;">
+			<li>Cluster Setup</li>
+			<li>Synthetic Benchmark</li>
+			<li>Real Job Mix</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-1500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Cluster Setup</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
+			<li>#machines = 150 = 5 * 30</li>
+			<li>2 quad-core Intel Xeon E5420, 16GB RAM, 4*750GB drives</li>
+			<li>1GB network interface / cable</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Synthetic Benchmark</h1>
+		</div>
+		<img src="img/f9.png" width="800" />
+	</div>
+
+	<div class="step" data-x="500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Synthetic Benchmark (Cont.)</h1>
+		</div>
+		<img src="img/f10.png" width="800" />
+	</div>
+
+	<div class="step" data-x="1500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Synthetic Benchmark (Cont.)</h1>
+		</div>
+		<img src="img/f8.png" width="800" />
+	</div>
+
+	<div class="step" data-x="2800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Actual Jobs</h1>
+		</div>
+		<div style="margin-left: 20%;">
+			<img src="img/t3.png" height="500" />
+		</div>
+	</div>
+
+	<div class="step" data-x="3800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Actual Jobs (Cont.)</h1>
+		</div>
+		<img src="img/f11.png" width="800" />
+	</div>
+
+	<div class="step" data-x="4500" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Actual Jobs (Cont.)</h1>
+			<h1>Perfomrance Gains from:</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
+			<li>Using I-files for aggregation</li>
+			<li>Decoupling sorting from map task execution</li>
+			<li>Making reduce phase dynamic</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="5800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Impact of Intermediate Data Loss</h1>
+		</div>
+		E (# of recomputing map tasks) is:
+		<table style="margin-left: -100px; padding: 25px; text-align: center; width:1000px;">
+			<tr>
+				<th style="font-weight: bold;">Hadoop</th>
+				<td> #tasks_per_node &frasl; #drives_per_node</td>
+			</tr>
+			<tr>
+				<th style="font-weight: bold;">Sailfish</th>
+				<td> #tasks_per_rack &frasl; #drives_per_node</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="step" data-x="6800" data-y="2500" data-z="-30000">
+		<div class="slidetitle" style="margin-bottom: 20px;">
+			<h1>Issues of Sailfish</h1>
+		</div>
+		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
+			<li>TODO</li>
+		</ul>
+	</div>
+
+	<div id="overview" class="step" data-scale="5">
+		
+	</div>
+	
+</div>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
