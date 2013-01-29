@@ -132,30 +132,39 @@
 		</ul>
 	</div>
 
-	<div class="step" data-x="2300" data-y="1700" data-z="-30000">
+	<div id="twitter" class="step", data-x="2300" data-y="1700" data-z="-30000">
+		<div class="slidetitle" style="margin-left:-100px"><h1>Example: Twitter</h1></div>
+		<div style="margin-left: 200px; font-size: 15px">
+			from Raffi Krikorian's slides (Sr. Director of Engineering, Platform Services at Twitter)
+		</div>
+		<div style="margin-top: 30px">
+			<img src="img/twitter.png" width="900" />
+		</div>
+	</div>
+	<div class="step" data-x="2300" data-y="3500" data-z="-30000">
 		<div class="slidetitle" style="margin-left:-100px"><h1>There Is Always a Hybrid</h1></div>
 		<div style="margin-left: -200px; margin-top: 100px">
 			<img src="img/shakehand.jpg" width="300" />
+			<p>Hand shaking!</p>
 		</div>
 		<ol style="margin-left: 25%; text-align: left; margin-top: -200px; font-size: 35px; width: 900px; list-style-type: disc;">
+			<li>Hive? </li>
 			<li>HadoopDB (Azza Abouzeid et al. VLDB 2009)
 				<ol style="padding-left: 5%; text-align: left; font-size: 30px; width: 900px; list-style-type: disc;">
 					<li>multiple single-node DBMS</li>
 					<li>Hadoop job coordinator, network communication layer</li>
 				</ol>
 			</li>
-			<li style="padding-top: 5%">Hadoop++ (Jens Dittrich et al. VLDB 2010)</li>
 		</ol>
 	</div>
 
-	<div class="step" data-x="2300" data-y="2700" data-z="-30000">
+	<div class="step" data-x="2300" data-y="4500" data-z="-30000">
 		<div class="slidetitle" ><h1 style="font-size: 80px">Drawbacks - Both Agree</h1></div>
 		<ul style="padding-left: 5%; text-align: left; padding-top: 5%; font-size: 45px; width: 900px">
 			<li>Intermediate data handling inefficiency</li>
 			<li>Tuning complexity</li>
 		</ul>
 	</div>
-
 
 	<div id="intermediate-data-handling" class="step" data-x="2300" data-y="700" data-z="-80000">
 		<div class="slidetitle"><h1>Intermediate Data Handling in Hadoop</h1></div>
@@ -174,7 +183,7 @@
 	<div class="step" data-x="4500" data-y="700" data-z="-80000">
 		<div style="margin-bottom: 300px">
 			<ul style="font-size: 40px;">
-				<li>#distince_retrievals (pulls) = <b>M * R</b> = #disk_seeks</li>
+				<li>#distinct_retrievals (pulls) = <b>M * R</b> = #disk_seeks</li>
 				<li>data_per_retrieval = <b>file_size / R</b></li>
 			</ul>
 			<p style="font-size: 25px; margin-left: 15%">where M = #map_tasks, R = #reduce_tasks</p>
@@ -440,12 +449,14 @@
 		<img src="img/f10.png" width="800" />
 	</div>
 
+	<!--
 	<div class="step" data-x="1500" data-y="2500" data-z="-30000">
 		<div class="slidetitle" style="margin-bottom: 20px;">
 			<h1>Synthetic Benchmark (Cont.)</h1>
 		</div>
 		<img src="img/f8.png" width="800" />
 	</div>
+	-->
 
 	<div class="step" data-x="2800" data-y="2500" data-z="-30000">
 		<div class="slidetitle" style="margin-bottom: 20px;">
@@ -497,7 +508,10 @@
 			<h1>Issues of Sailfish</h1>
 		</div>
 		<ul style="list-style-type: disc; font-size: 35px; margin-left: 150px; width: 900px;">
-			<li>TODO</li>
+			<li>Where does the performance really come from?</li>
+			<li>Intermediate data are written twice and read twice</li>
+			<li>Impact of data loss</li>
+			<li>Other data placement strategy?</li>
 		</ul>
 	</div>
 

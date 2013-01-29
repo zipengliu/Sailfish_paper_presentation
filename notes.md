@@ -1,5 +1,3 @@
-TODO:
-* chop off some graphs of the evaluation
 
 ## Context & Background ##############################################
 
@@ -13,13 +11,14 @@ TODO:
 
 ### MapReduce vs. Parallel DBMS
 
-* Facebook, Google;  Twitter
+* Facebook, Google;  Twitter (support tweeting, use MR for analysis)
 
 * brief intro to Parallel DBMS
   - database management system allows you to store, modify, extract
 	information from a database
   - parallel: use parallelization of operations to improve the
 	perfomrnance
+  - app: company computes business statistics e.g Teradata
 
 * talk breifly about the literature of the debate
 
@@ -29,6 +28,7 @@ TODO:
 	  - preventing data corruption (DBMS enforce integrity)
 	  - seperation from application --> portability, easy for data
 		sharing
+	  - can be used by performance enhancing tools
 	- MR
 	  - no explicit schema
 	  - but the data structure is programmed logically
@@ -43,7 +43,6 @@ TODO:
 	  - Pig, Hive
   - fault tolerance
     - DBMS
-	  - enforce data integrity
 	  - do not save intermediate data on disk
 	  - fails --> whole transaction fails, redo (for transactional
 		workloads)
@@ -53,7 +52,7 @@ TODO:
 	  - have intermedate data stored on disk
 	  - fails --> part of the computation redo
 	  - rely on the DFS underneath
-	- fact:
+	- fact: (explain why DBMS not good at fault tolerance)
 	  - DBMS does not scale as MR (<100 nodes) --> fewer failure
 	  - DBMS require homogeneity
   - performance
@@ -61,7 +60,11 @@ TODO:
 	- depend largly on implementation
 
 * small examples to illustrate the comparison
-  - TODO
+  - Twitter
+  - Redis: a open-souce key-value in-memory data store
+  - DBMS for real-time tweets
+  - Hadoop used for analysis of data periodically
+  - what about google
 
 
 ### Hybrid System
@@ -73,10 +76,10 @@ TODO:
 * basic idea:
   - connect multiple single node database systems using Hadoop as task
 	coordinator and network communication layer
-  - actual computing work is done in a DBMS
+  - actual computing work is done in a DBMS (thus programming language
+    is SQL like)
 
-* start-up company begin to take this project 
-
+* start-up company commercialize it
 
 ### Drawbacks in MapReduce
 
@@ -85,7 +88,7 @@ TODO:
 
 ### Reducing #disk_seeks
 
-* in the reduce phase! no the map phase
+* in the reduce phase! not the map phase
 * ideal situation vs practical usage
 
 ### I file Abstraction and API
@@ -192,5 +195,18 @@ TODO:
   - just another viewpoint of batching I/O
 
 * Intermediate data are written twice, read twice
+  - once SSD's price drops, sailfish may behave worse (when there is no
+	skew)
 
 * Doubt the impact of data loss
+  - one I-file fails (one disk fails) --> many map-tasks should re-start
+ 
+* Other data placement strategy to accelerate the I/O?
+
+* other bottleneck?
+
+## Conclusion ########################################################
+
+* Sailfish is new Map-Reduce Framework, which focus on aggregating
+  intermediate data.
+
